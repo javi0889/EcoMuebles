@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Contacto EcoMuebles</title>
+
+  <link rel="stylesheet" href="Contacto.css">
+
+  <!-- EMAILJS -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+<header>
+  <!-- LOGO + NOMBRE -->
+  <div class="logo">
+
+    <img 
+      src="Captura de pantalla 2026-05-29 122526.png"
+      alt="Logo EcoMuebles"
+      class="logo-img"
+    >
+
+    <span>EcoMuebles</span>
+
+  </div>
+
+  <!-- MENÚ -->
+  <nav>
+    <a href="Index.html">Inicio</a>
+    <a href="Galeria.html">Galería</a>
+    <a href="Contacto.html">Contacto</a>
+  </nav>
+
+</header>
+<body>
+
+  <section class="contacto">
+
+    <h1>Contáctanos</h1>
+
+    <form id="formulario">
+
+      <input 
+        type="text"
+        name="nombre"
+        placeholder="Tu nombre"
+        required
+      >
+
+      <input 
+        type="email"
+        name="correo"
+        placeholder="Tu correo"
+        required
+      >
+
+      <textarea
+        name="comentario"
+        placeholder="Escribe tu comentario"
+        required
+      ></textarea>
+
+      <button type="submit">
+        Enviar
+      </button>
+
+    </form>
+
+    <p id="mensaje"></p>
+
+  </section>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
