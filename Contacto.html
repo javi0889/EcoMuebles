@@ -10,8 +10,14 @@
   <link rel="stylesheet" href="Contacto.css">
 
   <!-- EMAILJS -->
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+        emailjs.init({
+            publicKey: "6SkR1WMjMF_RoiwKa"
+        });
+    </script>
 </head>
+
 <header>
   <!-- LOGO + NOMBRE -->
   <div class="logo">
@@ -45,6 +51,7 @@
       <input 
         type="text"
         name="nombre"
+        id="nombre"
         placeholder="Nombre"
         required
       >
@@ -52,12 +59,14 @@
       <input 
         type="email"
         name="correo"
+        id="correo"
         placeholder="Correo"
         required
       >
 
       <textarea
         name="comentario"
+        id="comentario"
         placeholder="Escribe tu comentario"
         required
       ></textarea>
@@ -73,6 +82,33 @@
   </section>
 
   <script src="script.js"></script>
+
+  <script>function sendMail() {
+ 
+    let params = {
+        nombre: document.getElementById("nombre").value,
+        correo: document.getElementById("correo").value,
+        comentario: document.getElementById("comentario").value
+    };
+ 
+    console.log("Datos enviados:", params);
+ 
+    emailjs.send(
+        "service_iyhgp5a",
+        "template_stsfr7q",
+        params
+    )
+    .then(function (response) {
+        console.log("Éxito:", response);
+        alert("Comentario enviado correctamente.");
+    })
+    .catch(function (error) {
+        console.error("Error completo:", error);
+        alert("Error: " + error.text);
+    });
+ 
+}
+</script>
 
 </body>
 </html>
